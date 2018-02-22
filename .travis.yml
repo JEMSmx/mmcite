@@ -4,7 +4,7 @@ env:
     # master SHA256-606c78f9bd55e946b34762b7f54b65177eaa37a3fc42559ea62712cf30431b2b
     #- secure: ""
     # beta SHA256-af7507b9411c78ff3df1efd621fbcb9ec9ab7057af1aa1e543dbca6a9c4020f0
-    - secure: ""
+    - secure: "LCf8+J/1VwySPiL5mbFufoli99ib66ZIN5z7UIFLFE3556zRINAvKZ13wUvsvhw7J2JLNh/Id2ghVxiCJV7mN1ih1Igb3JoRSBzlJE0Y9glzwk4tfJHXDt0MrpZuCfn9ZsgdehGe+O7KAMAKUBu3Y8TmP8M0j7D58UQqYhjC2RKHL65dZfdZAJMZ9ALDU5ZYdukRrJbBIpGSVJdhFGMV+81BlTimZQQbey0P/pJfOpA0JbNwsM8QB9f8ftsSyFrSmKzLP6s1dyN3Xd1jHVSrod8onAe8uZsiX7pYDufr2j8Vi89MtudPPFoI0fONF6550Snkbb3A1PCm9eP2mijqXQGr5btIA4mJPBevXCp5DQ5cAePysdftwClugcbWdyLrdtW4pDOq/it8n+7DjJR86/KY8P0M5fQKiIzb8IzCqf336Tjvg+iglEfd9Z2MU6ud7tNTavFCmBtvtWa0H0AiB568oMbBfbaYBEWAOlbxLG2gcpNemcbUWAz/lIN5oBcXTDAkJGrG5dop1zVkFgLvXXGId1eNQbgWbwu0RZexfJ1M+4eVWpglD4fcZZR7mwHhH5mNldKSc2zK6QhFkkBoQY56j2rXBZobvrb+A+dtE8gh6iYAI+5ahaa+T/IKtQceeZsvbp8PlGhgeghmYRYtplWU3+Xr/E9yx4JJBFaG0Kg="
 script:
   - true
 notifications:
@@ -18,8 +18,6 @@ before_deploy:
   - export GIT_FTP_URL_BRANCH=GIT_FTP_URL_$TRAVIS_BRANCH
   - './git-ftp add-scope $TRAVIS_BRANCH "${!GIT_FTP_URL_BRANCH}"'
   - git config git-ftp.syncroot public
-  - npm install -g uglify-js
-  - gem install sass -v 3.4.23 --no-ri --no-rdoc
 deploy:
   - provider: script
     script: ./git-ftp push -s $TRAVIS_BRANCH -v -f
