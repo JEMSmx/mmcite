@@ -1,0 +1,109 @@
+.qualities{
+   display: flex;
+   flex-wrap: nowrap;
+   width: 100%;
+   height: auto;
+   @include mobile{
+      flex-direction: column;
+   }
+
+   .qualities-item{
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      width: 33.33%;
+      height: auto;
+      padding-top: 24px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid black;
+      @include tablet{
+         flex-direction: column;
+         align-items: center;
+         text-align: center;
+         padding-left: 8px;
+         padding-right: 8px;
+      }
+      @include mobile{
+         flex-direction: column;
+         text-align: center;
+         padding-bottom: 24px;
+      }
+
+      img{
+         height: 64px;
+         margin-right: 24px;
+         margin-bottom: 0;
+         @include tablet{
+            margin-right: 0;
+            margin-bottom: 16px;
+         }
+      }
+      .qualities-item-text-content{
+         display: flex;
+         flex-direction: column;
+         height: auto;
+
+         h3{
+            font-size: 20px;
+            letter-spacing: 0;
+            margin-bottom: 8px;
+         }
+         p{
+            color: gray;
+            margin-bottom: 0;
+         }
+      }
+   }
+   .qualities-item-2{
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      width: 33.33%;
+      height: auto;
+      padding-top: 24px;
+      padding-bottom: 32px;
+      border-right: 1px solid black;
+      border-bottom: 1px solid black;
+      border-left: 1px solid black;
+      @include tablet{
+         flex-direction: column;
+         align-items: center;
+         text-align: center;
+         padding-left: 8px;
+         padding-right: 8px;
+      }
+
+      @include mobile{
+         flex-direction: column;
+         text-align: center;
+         padding-bottom: 24px;
+      }
+
+      img{
+         height: 64px;
+         margin-right: 24px;
+         margin-bottom: 0;
+         @include tablet{
+            margin-right: 0;
+            margin-bottom: 16px;
+         }
+      }
+      .qualities-item-text-content{
+         display: flex;
+         flex-direction: column;
+         height: auto;
+
+         h3{
+            font-size: 20px;
+            letter-spacing: 0;
+            margin-bottom: 8px;
+         }
+         p{
+            color: gray;
+            margin-bottom: 0;
+         }
+      }
+   }
+}

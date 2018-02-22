@@ -1,0 +1,32 @@
+.menu-a{
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: flex-start;
+   align-items: center;
+   padding-top: 24px;
+   padding-bottom: 24px;
+   @include mobile{
+     flex-wrap: wrap;
+   }
+
+   h3{
+      margin-bottom: 0;
+      font-size: 18px;
+      a:hover{
+         color: red;
+         transition: all .2s ease-in-out;
+      }
+   }
+   p{
+      margin-bottom: 0;
+      font-size: 20px;
+   }
+}
+
+//class active
+.active{
+   color: red;
+ }
+ .inactive{
+    color: $color-primary;
+ }

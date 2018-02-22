@@ -1,0 +1,378 @@
+.header-container {
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  transition: top .2s ease-in-out;
+  box-shadow: 0px 6px 5px -6px rgba(0, 0, 0, 0.15);
+}
+//For the Fixed on scroll up and hidden on scroll down
+.nav-collapse {
+  top: -176px;
+  @media screen and (max-width: 992px){
+    top: -61px;
+  }
+}
+header.main-nav {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .header-info{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background: cyan;
+
+    .header-info-content{
+      max-width: 1232px;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: auto;
+
+      .company-info{
+        display: flex;
+        flex-wrap: nowrap;
+        height: auto;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        @include tablet{
+          display: none;
+        }
+        p{
+          margin-bottom: 0;
+        }
+
+        .company-info-box{
+          display: flex;
+          flex-wrap: nowrap;
+          align-items: center;
+          height: auto;
+
+          img{
+            height: 12px;
+            margin-right: 8px;
+          }
+          a{
+            font-size: 14px;
+            letter-spacing: 1px;
+          }
+        }
+      }
+      .company-register{
+        display: flex;
+        flex-wrap: nowrap;
+        height: auto;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        @include tablet{
+          padding-left: 24px;
+        }
+
+        p{
+          margin-bottom: 0;
+        }
+
+        .company-info-box{
+          display: flex;
+          flex-wrap: nowrap;
+          align-items: center;
+          height: auto;
+
+          img{
+            height: 14px;
+            margin-right: 8px;
+          }
+          a{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .header-search-container{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+
+    .header-search-inner{
+      max-width: 1232px;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: auto;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      @include tablet{
+        justify-content: flex-start;
+        padding-left: 24px;
+      }
+
+      .header-search-images{
+        display: flex;
+        flex-wrap: nowrap;
+        height: auto;
+        img{
+          height: 72px;
+          margin-right: 16px;
+          margin-bottom: 0;
+        }
+      }
+      .header-search-item{
+        display: flex;
+        width: 31%;
+        height: auto;
+        @include tablet{
+          width: 45%;
+          margin-left: 48px;
+        }
+        form{
+          width: 100%;
+          justify-content: flex-end;
+          input{
+            min-width: 10%;
+            width: 90%;
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: solid 1px gray;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+          }
+          button{
+            padding-bottom: 32px;
+            padding-right: 0;
+            border-bottom: 1px solid gray;
+            border-radius: 0;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+  nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    border-top: 1px solid black;
+
+    ul{
+      display: flex;
+      justify-content: space-between;
+      max-width: 1232px;
+      width: 100%;
+      font-weight: bold;
+      padding-top: 8px;
+      padding-right: 16px;
+      padding-bottom: 8px;
+      padding-left: 16px;
+      a:hover{
+        li{
+          color: orange;
+          transition: all .25s ease-in-out;
+        }
+      }
+    }
+  }
+  //Responsive shit
+  @media screen and (max-width: 992px){
+    nav{
+      display: none;
+    }
+  }
+  //Resets for the main elements
+  img{margin: 0;}
+  button{margin: 0;}
+  ul {
+    display: flex;
+    list-style: none;
+    margin-bottom: 0;
+    a {
+      display: flex;
+      align-items: center;
+      margin-right: $space-2;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+    }
+    a.link {
+      li {
+        color: #31a3d6;
+      }
+      &:hover {
+        li {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+header.main-nav.responsive {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.98);
+  //Code to block the scroll
+  .header-info{
+    @include tablet{
+      display: none;
+    }
+  }
+  .header-search-container{
+    @include tablet{
+      display: none;
+    }
+  }
+  a {
+    height: 20%;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+    border-top: none;
+    ul {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      margin-bottom: 0;
+      padding:0;
+      a.link {
+        height: 20%;
+        li {
+          color: $color-inverse;
+          text-transform: uppercase;
+        }
+      }
+      .btn-doctors, .btn-sign-up {
+        background-color: transparent;
+        color: $color-inverse;
+        border: none;
+        padding: 0;
+      }
+    }
+  }
+  #nav-icon span {
+    background: $color-primary;
+  }
+}
+
+// Navegation icon in responsive
+#nav-icon {
+  position: absolute;
+  top:64px;
+  right: 24px;
+  width: 44px;
+  height: 30px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  display: none;
+  @media screen and (max-width: 992px){
+    display: block;
+  }
+}
+#nav-icon span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: $color-primary;
+  border-radius: 12px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+/* Icon */
+#nav-icon span:nth-child(1) {
+  top: 0px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+#nav-icon span:nth-child(2) {
+  top: 12px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+#nav-icon span:nth-child(3) {
+  top: 24px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+#nav-icon.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: -3px;
+  left: 8px;
+}
+#nav-icon.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+#nav-icon.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 29px;
+  left: 8px;
+}

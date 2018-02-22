@@ -1,0 +1,220 @@
+.contact{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: auto;
+    padding-top: 72px;
+    margin-bottom: 56px;
+    border-top: 1px solid black;
+
+    @include mobile{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .accordion{
+        width: 40%;
+        @include tablet{
+            width: 49%;
+        }
+        @include mobile{
+            width: 100%;
+        }
+        .half-accordion{
+           display: flex;
+           flex-direction: column;
+           width: 100%;
+        }
+        /* Acordeon styles */
+        .tab {
+           position: relative;
+           margin-bottom: 12px;
+           width: 100%;
+           color: #fff;
+           overflow: hidden;
+        }
+        input {
+           position: absolute;
+           opacity: 0;
+           z-index: -1;
+        }
+        label {
+           position: relative;
+           display: block;
+           background: #16a085;
+           font-weight: normal;
+           font-size: 20px;
+           margin-bottom: 0;
+           cursor: pointer;
+           padding-top: 14px;
+           padding-bottom: 12px;
+           padding-left: 40px;
+
+           @include mobile{
+               font-size: 17px;
+               padding-left: 24px;
+           }
+        }
+        .top-label{
+            padding-top: 6px;
+            padding-bottom: 0;
+        }
+        .sublabel{
+            padding-top: 0px;
+            padding-bottom: 6px;
+        }
+        .blue label {
+           background: gray;
+        }
+        .tab-content {
+           max-height: 0;
+           overflow: hidden;
+           padding-left: 40px;
+           padding-right: 16px;
+           border-right: 1px solid gray;
+           border-bottom: 1px solid gray;
+           border-left: 1px solid gray;
+           background: #fff;
+           -webkit-transition: max-height .35s;
+           -o-transition: max-height .35s;
+           transition: max-height .35s;
+
+           h4{
+               font-size: 18px;
+               margin-top: 40px;
+               a{
+                   color: orange;
+               }
+           }
+           .h4-second{
+               margin-top: 0;
+           }
+           .info-content{
+               display: flex;
+               flex-wrap: nowrap;
+
+               .info-icon{
+                   margin-right: 24px;
+                   img{
+                       margin-bottom: 0;
+                   }
+               }
+               .info-text{
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 28px;
+                    p{
+                        letter-spacing: 0;
+                        margin-bottom: 0;
+                        line-height: 1.8;
+                    }
+                }
+           }
+           .info-content:last-child{
+               margin-bottom: 8px;
+           }
+        }
+        .blue .tab-content {
+           background: #fff;
+        }
+        
+        /* :checked */
+        input:checked ~ .tab-content {
+           max-height: 100em;
+        }
+        input:checked ~ label {
+            background: #2980b9;
+         }
+        /* Icon */
+        label::after {
+           position: absolute;
+           right: 0;
+           top: 0;
+           display: block;
+           width: 3em;
+           height: 3em;
+           line-height: 3;
+           text-align: center;
+           -webkit-transition: all .35s;
+           -o-transition: all .35s;
+           transition: all .35s;
+        }
+          
+          input[type=radio] + label::after {
+            content: "\25BC";
+          }
+          
+          input[type=radio]:checked + label::after {
+            transform: rotateX(180deg);
+          }
+          
+    }
+    .contact-content{
+        display: flex;
+        flex-direction: column;
+        width: 51%;
+        height: auto;
+        @include tablet{
+            width: 49%;
+        }
+        @include mobile{
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        h2{
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 0;
+            margin-bottom: 0px;
+        }
+        .contact-form{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: auto;
+            margin-top: 40px;
+           
+
+            .input-content{
+                position: relative;
+            }
+
+            .contact-textarea{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: auto;
+                margin-top: 16px;;
+
+                textarea{
+                    padding-left: 8px;
+                    border: 1px solid black;
+                }
+                label{
+                    color: gray;
+                }
+            }
+            button{
+                align-self: flex-start;
+                width: auto;
+                color: #fff;
+                font-size: 18px;
+                font-weight: bold;
+                padding-top: 16px;
+                padding-right: 32px;
+                padding-bottom: 12px;
+                padding-left: 32px;
+                margin-top: 24px;
+                background: red;
+                border-radius: 25px;
+                @include mobile{
+                    align-self: center;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,88 @@
+/**
+ individual product tabs section
+ **/
+ 
+.tabs{
+	display: flex;
+  flex-wrap: wrap; // make sure it wraps
+  margin-top: 32px;
+  margin-bottom: 64px;
+}
+.tabs label {
+  order: 1; // Put the labels first
+  width: 21%;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 19px;
+  text-transform: uppercase;
+  padding-top: 16px;
+  padding-right: 32px;
+  padding-bottom: 14px;
+  padding-left: 32px;
+  margin-bottom: 0;
+	margin-right: 4px;
+	cursor: pointer;
+  background: gray;
+  font-weight: normal;
+  transition: background ease 0.2s;
+  border-radius: 10px 10px 0 0;
+  @include tablet{
+    width: 23.8%;
+    letter-spacing: 0;
+    font-size: 17px;
+    padding-top: 12px;
+    padding-right: 16px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+ }
+}
+.tabs .tab {
+  order: 99; // Put the tabs last
+  flex-grow: 1;
+	width: 100%;
+	display: none;
+  padding-top: 32px;
+  padding-right: 32px;
+  padding-bottom: 32px;
+  padding-left: 40px;
+  background: #fff;
+  border: 1px solid gray;
+  @include mobile{
+    padding-top: 24px;
+    padding-right: 16px;
+    padding-bottom: 0px;
+    padding-left: 16px;
+  }
+  
+}
+.tabs input[type="radio"] {
+	display: none;
+}
+.tabs input[type="radio"]:checked + label {
+	background: #398acc;
+}
+.tabs input[type="radio"]:checked + label + .tab {
+	display: block;
+}
+
+@media (max-width: 45em) {
+  .tabs .tab,
+  .tabs label {
+    order: initial;
+  }
+  .tabs label {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 0.2rem;
+  }
+}
+
+
+//Section discus
+#disqus_thread{
+  margin-bottom: 64px;
+  @include mobile{
+    margin-bottom: 24px;
+  }
+}
