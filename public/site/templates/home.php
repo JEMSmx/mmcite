@@ -29,30 +29,17 @@ include('./_nav.php');  ?>
   		</div>
   	</div>
   </div>
-
   <!-- Qualities -->
   <div class="qualities">
-  	<div class="qualities-item">
-  		<img src="https://dummyimage.com/64x64/940d28/940d28" alt="">
+  <?php foreach ($page->qualities as $key => $quality) { ?> 
+  	<div class="qualities-item<?php if($key==1) echo '-2'; ?>">
+  		<img src="<?=$quality->img->url?>" alt="<?=$quality->title?>">
   		<div class="qualities-item-text-content">
-  			<h3>DESIGN</h3>
-  			<p>Nemo enim ipsam volupta tem qui</p>
+  			<h3><?=$quality->title?></h3>
+  			<p><?=$quality->subtitle?></p>
   		</div>
   	</div>
-  	<div class="qualities-item-2">
-  		<img src="https://dummyimage.com/64x64/940d28/940d28" alt="">
-  		<div class="qualities-item-text-content">
-  			<h3>HIGH QUALITY</h3>
-  			<p>Nemo enim ipsam volupta tem qui</p>
-  		</div>
-  	</div>
-  	<div class="qualities-item">
-  		<img src="https://dummyimage.com/64x64/940d28/940d28" alt="">
-  		<div class="qualities-item-text-content">
-  			<h3>ACTIVITY</h3>
-  			<p>Nemo enim ipsam volupta tem qui</p>
-  		</div>
-  	</div>
+  <?php } ?>
   </div>
   <!--  Main content -->
   <main class="j-workspace ">
@@ -100,6 +87,4 @@ include('./_nav.php');  ?>
   				<!-- section banner -->
   				<?php include('./_subs.php'); ?>
   			</main>
-
-
 <?php include('./_foot.php'); ?>

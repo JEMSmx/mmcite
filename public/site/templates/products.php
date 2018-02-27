@@ -26,9 +26,9 @@ include('./_nav.php');  ?>
     <div class="j-wrap">
       <!-- section welcome -->
       <div class="menu-a">
-            <h3><a href="index.html" class="inactive">HOME</a></h3>
+            <h3><a href="/" class="inactive">HOME</a></h3>
             <p>&nbsp;&nbsp;>>&nbsp;&nbsp;</p>
-            <h3><a href="#" class="active">PRODUCTS</a></h3>
+            <h3><a href="/products" class="active">PRODUCTS</a></h3>
       </div>
       <!-- section products -->
       <div class="products">
