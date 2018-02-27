@@ -1,69 +1,56 @@
-<?php
+<?php if($input->urlSegment1)
+        $qSearch=str_replace("_", " ", $input->urlSegment1);
+      else if($input->get->q)
+        $qSearch=$input->get->q;
+      else
+        $session->redirect('/'); 
+      
+      $q = $sanitizer->text($qSearch); 
+        if($q){
+          $input->whitelist('q', $q); 
+          $products = $pages->find("template=product, title|desc|reviews|specifications~=$q, limit=60");
+        } 
+        include('./_head.php'); 
 
-include("./_head.php"); ?>
+        include('./_nav.php'); ?>
+  <!--  Main content -->
+  <main class="j-workspace ">
+    <div class="j-wrap">
+      <!-- section welcome -->
+      <div class="menu-a">
+            <h3><a href="/" class="inactive">HOME</a></h3>
+            <p>&nbsp;&nbsp;>>&nbsp;&nbsp;</p>
+            <h3><a href="<?=$page->url.$q?>" class="active">RESULTS</a></h3>
+      </div>
+      <!-- section products -->
+      <div class="products">
+        <div class="product-title">
+      <?php if($products->count===0){ ?>
+        <h2>No products found matching: <?= $qSearch; ?></h2>
+      <?php }else{ ?>
+        <h2>Search result for: <?= $qSearch; ?></h2>
+      <?php } ?>
+        </div>
+        <div class="products-items-content">
+  <?php  foreach ($products as $key => $product) { 
+              $image=$product->images->first();
+              if($image)
+                $img=$image->width(240, array('quality' => 80, 'upscaling' => true, 'cropping' => false)); ?>
+          <div class="products-item-2">
+            <img src="<?php if($image) echo $img->url ?>" alt="<?=$product->title?>">
+            <h3><a href="<?=$page->url?>"><?=$product->title?></a></h3>
+            <img class="stars-img" src="https://dummyimage.com/104x16/000/fff" alt="">
+            <p>$<?=$product->price?></p>
+          </div>
+        <?php } ?>
+        </div>
+        <?php if($products->count()>18){ ?>
+          <a href="#" class="products-button-bottom-2"><button>VIEW MORE PRODUCTS</button></a>
+        <?php } ?>
+      </div>
+    </div>
+    <!-- section banner -->
+    <?php include('./_subs.php'); ?>
+  </main>
 
-<div id='content'>
-
-	<?php
-
-	// search.php template file
-	// See README.txt for more information. 
-
-	// look for a GET variable named 'q' and sanitize it
-	$q = $sanitizer->text($input->get->q); 
-
-	// did $q have anything in it?
-	if($q) { 
-
-		// Sanitize for placement within a selector string. This is important for any 
-		// values that you plan to bundle in a selector string like we are doing here.
-		$q = $sanitizer->selectorValue($q); 
-
-		// Search the title and body fields for our query text.
-		// Limit the results to 50 pages. 
-		$selector = "title|body~=$q, limit=50"; 
-
-		// If user has access to admin pages, lets exclude them from the search results.
-		// Note that 2 is the ID of the admin page, so this excludes all results that have
-		// that page as one of the parents/ancestors. This isn't necessary if the user 
-		// doesn't have access to view admin pages. So it's not technically necessary to
-		// have this here, but we thought it might be a good way to introduce has_parent.
-		if($user->isLoggedin()) $selector .= ", has_parent!=2"; 
-
-		// Find pages that match the selector
-		$matches = $pages->find($selector); 
-
-		// did we find any matches? ...
-		if($matches->count) {
-
-			// we found matches
-			echo "<h2>Found $matches->count page(s) matching your query:</h2>";
-			
-			// output navigation for them (see TIP below)
-			echo "<ul class='nav'>";
-
-			foreach($matches as $match) {
-				echo "<li><a href='$match->url'>$match->title</a>";
-				echo "<div class='summary'>$match->summary</div></li>";
-			}
-
-			echo "</ul>";
-			
-			// TIP: you could replace everything from the <ul class='nav'> above
-			// all the way to here, with just this: renderNav($matches); 
-
-		} else {
-			// we didn't find any
-			echo "<h2>Sorry, no results were found.</h2>";
-		}
-
-	} else {
-		// no search terms provided
-		echo "<h2>Please enter a search term in the search box (upper right corner)</h2>";
-	}
-
-	?>
-
-</div><!-- end content -->
-
-<?php include("./_foot.php"); ?>
+<?php include('./_foot.php'); ?>
