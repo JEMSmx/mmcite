@@ -38,12 +38,12 @@
       <div class="header-search-container">
         <div class="header-search-inner">
           <div class="header-search-images">
-            <a href="index.html"><img src="https://dummyimage.com/72x72/000/fff" alt=""></a>
+            <a href="/"><img src="https://dummyimage.com/72x72/000/fff" alt=""></a>
             <img src="https://dummyimage.com/72x72/000/fff" alt="">
           </div>
           <div class="header-search-item">
-            <form action="#">
-              <input type="search" name="menu-search" id="menu-search" placeholder="SEARCH">
+            <form id="search">
+              <input type="text" id="inputSearch" name="word" placeholder="SEARCH">
               <button type="submit" class="img-button"></button>
             </form>
           </div>
@@ -56,7 +56,7 @@
               ABOUT MMCITE
             </li>
           </a>
-          <a href="products.html">
+          <a href="/products">
             <li>
               PRODUCTS
             </li>
@@ -91,7 +91,7 @@
               MMCITE SOCIAL
             </li>
           </a>
-          <a href="/contacto">
+          <a href="/contact">
             <li>
               CONTACT
             </li>

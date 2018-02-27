@@ -57,8 +57,37 @@
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script type="text/javascript" src="<?= $config->urls->templates ?>assets/slick/slick.min.js"></script>
+  <script src="<?= $config->urls->templates ?>assets/scripts/compartir.js"></script> 
+  <script id="dsq-count-scr" src="//mmcite9-1.disqus.com/count.js" async></script>
   <script type="text/javascript">
+     var normalize = (function() {
+    var from = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç",
+        to   = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc",
+        mapping = {};
+    for(var i = 0, j = from.length; i < j; i++ )
+        mapping[ from.charAt( i ) ] = to.charAt( i );
+
+    return function( str ) {
+        var ret = [];
+        for( var i = 0, j = str.length; i < j; i++ ) {
+            var c = str.charAt( i );
+            if( mapping.hasOwnProperty( str.charAt( i ) ) )
+                ret.push( mapping[ c ] );
+            else
+                ret.push( c );
+        }
+        return ret.join( '' );
+    }
+  })();
       $(document).ready(function(){
+        $("#search").submit(function(event){
+          if($("input[name=word]").val().length>2){
+            var search=$("input[name=word]").val();
+            search=search.replace(' ','_');
+            window.location="/search/"+normalize(search);
+          }
+          event.preventDefault();
+        });
          $('.your-class').slick({
             dots: true,
             infinite: true,
@@ -72,6 +101,89 @@
             arrows:false,
             pauseOnHover: false,
          });
+      });
+    var sharing_name = "Comparte esta pagina";
+    var sharing_url = "http://google.com";
+  $(document).ready(function(){
+    $('.slider-for').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      infinite: false,
+      fade: true,
+      cssEase: 'ease',
+      asNavFor: '.slider-nav'
+    });
+    $('.slider-nav').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      centerMode: false,
+      asNavFor: '.slider-for',
+      dots: false,
+      arrows: true,
+      infinite: false,
+      cssEase: 'ease',
+      focusOnSelect: true
+    });
+  });
+  $(document).ready(function(){
+     $('.products-slick').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'ease',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        arrows:false,
+        pauseOnHover: false,
+     });
+   });
+  $(document).ready(function(){
+         $('.contacto-slick').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'ease',
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 1000,
+            arrows:false,
+            pauseOnHover: false,
+         });
+      });
+      $('#contact-form').submit(function(e){
+        e.preventDefault();
+        $('input').removeClass('error');
+        $('label.error').remove();
+        var name=$("input[name='name']");
+        var subject=$("input[name='subject']");
+        var email=$("input[name='email']");
+        var pattern = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+        if(name.val() === ""){
+          $(name).addClass('error');
+          $(name).after('<label class="error"> Campo obligatorio</label>');
+        }
+        if(subject.val() === ""){
+          $(subject).addClass('error');
+          $(subject).after('<label class="error"> Campo obligatorio</label>');
+        }
+
+        if(!pattern.test(email.val())){
+          $(email).addClass('error');
+          $(email).after('<label class="error"> El correo electrónico señalado es incorrecto</label>');   
+        } 
+        if($('label.error').length == 0){
+          console.log("se enviara un correo");
+
+        }
+      
+
+          return false;
       });
  </script>
 </body>
