@@ -79,73 +79,27 @@ include('./_nav.php');  ?>
   							<h2>FEATURED PRODUCTS</h2>
   						</div>
   						<div class="products-items-content">
+                <?php
+                  $products=$pages->find("template=product, sort=-published, limit=4");
+                  foreach ($products as $key => $product) { 
+                    $image=$product->images->first();
+                    if($image)
+                      $img=$image->width(240, array('quality' => 80, 'upscaling' => true, 'cropping' => false)); ?>
   							<div class="products-item">
-  								<img src="https://dummyimage.com/120x120/000/fff" alt="">
-  								<h3>Bus Shelters</h3>
-  								<a href="#"><button>VIEW DETAILS</button></a>
+  								<img src="<?php if($image) echo $img->url; ?>" alt="<?=$product->title?>">
+  								<h3><?=$product->title?></h3>
+  								<a href="<?=$product->url?>"><button>VIEW DETAILS</button></a>
   							</div>
-  							<div class="products-item">
-  								<img src="https://dummyimage.com/120x120/000/fff" alt="">
-  								<h3>Bus Shelters</h3>
-  								<a href="#"><button>VIEW DETAILS</button></a>
-  							</div>
-  							<div class="products-item">
-  								<img src="https://dummyimage.com/120x120/000/fff" alt="">
-  								<h3>Bus Shelters</h3>
-  								<a href="#"><button>VIEW DETAILS</button></a>
-  							</div>
-  							<div class="products-item">
-  								<img src="https://dummyimage.com/120x120/000/fff" alt="">
-  								<h3>Bus Shelters</h3>
-  								<a href="#"><button>VIEW DETAILS</button></a>
-  							</div>
-  							<div class="products-item">
-  								<img src="https://dummyimage.com/120x120/000/fff" alt="">
-  								<h3>Drinking Fountains</h3>
-  								<a href="#"><button>VIEW DETAILS</button></a>
-  							</div>
-  							<div class="products-item">
-  								<img src="https://dummyimage.com/120x120/000/fff" alt="">
-  								<h3>Bus Shelters</h3>
-  								<a href="#"><button>VIEW DETAILS</button></a>
-  							</div>
-  							<div class="products-item">
-  								<img src="https://dummyimage.com/120x120/000/fff" alt="">
-  								<h3>Bus Shelters</h3>
-  								<a href="#"><button>VIEW DETAILS</button></a>
-  							</div>
-  							<div class="products-item">
-  								<img src="https://dummyimage.com/120x120/000/fff" alt="">
-  								<h3>Bus Shelters</h3>
-  								<a href="#"><button>VIEW DETAILS</button></a>
-  							</div>
-  							<div class="products-item">
-  								<img src="https://dummyimage.com/120x120/000/fff" alt="">
-  								<h3>Bus Shelters</h3>
-  								<a href="#"><button>VIEW DETAILS</button></a>
-  							</div>
-  							<div class="products-item">
-  								<img src="https://dummyimage.com/120x120/000/fff" alt="">
-  								<h3>Bus Shelters</h3>
-  								<a href="#"><button>VIEW DETAILS</button></a>
-  							</div>
+                <?php } ?>
   						</div>
-  						<a href="#" class="products-button-bottom"><button>VIEW MORE PRODUCTS</button></a>
+              <?php if($products->count>4){ ?>
+                <a href="/products" class="products-button-bottom"><button>VIEW MORE PRODUCTS</button></a>
+              <?php } ?>
   					</div>
   				</div>
   				<!-- section banner -->
-  				<section class="banner">
-  					<div class="banner-content">
-  						<h2>WOULD YOU LIKE TO RECEIVE INFORMATION ABOUT OUR NEWS?</h2>
-  						<form class="banner-subscribe-content" action="#" method="POST">
-  							<input type="email" name="bannerEmail" id="bannerEmail" placeholder="EMAIL ADDRESS">
-  							<button type="submit">SUBSCRIBE</button>
-  						</form>
-  					</div>
-  				</section>
+  				<?php include('./_subs.php'); ?>
   			</main>
 
 
-<?php include('./_foot.php'); // include footer markup ?>
-
-
+<?php include('./_foot.php'); ?>
