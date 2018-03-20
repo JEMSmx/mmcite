@@ -7,26 +7,13 @@ include('./_nav.php');  ?>
   <!--  Hero -->
   <div class="hero-content">
   	<div class="your-class">
-  		<div class="hero-item-1">
-  			<h2 class="item-title">MMCITE 9</h2>
-  			<p class="item-p">We value our cities and so we constantly endeavour to make them beautiful wherever they may be</p>
-  			<a href="#" class="item-button"><button>GET MORE INFO</button></a>
+  		<?php foreach ($page->slider as $key => $slide) { ?>
+  		<div class="hero-item-<?=$key+1?>" style="background-image:url('<?= $slide->fondo->url ?>')">
+  			<h2 class="item-title"><?= $slide->title ?></h2>
+  			<?= str_replace("<p>", "<p class='item-p'>", $slide->desc) ?>
+  			<a href="<?= $slide->buttonLink ?>" class="item-button"><button><?= $slide->buttonTitle ?></button></a>
   		</div>
-  		<div class="hero-item-2">
-  			<h2 class="item-title">MMCITE 9</h2>
-  			<p class="item-p">We value our cities and so we constantly endeavour to make them beautiful wherever they may be</p>
-  			<a href="#" class="item-button"><button>GET MORE INFO</button></a>
-  		</div>
-  		<div class="hero-item-3">
-  			<h2 class="item-title">MMCITE 9</h2>
-  			<p class="item-p">We value our cities and so we constantly endeavour to make them beautiful wherever they may be</p>
-  			<a href="#" class="item-button"><button>GET MORE INFO</button></a>
-  		</div>
-  		<div class="hero-item-4">
-  			<h2 class="item-title">MMCITE 9</h2>
-  			<p class="item-p">We value our cities and so we constantly endeavour to make them beautiful wherever they may be</p>
-  			<a href="#" class="item-button"><button>GET MORE INFO</button></a>
-  		</div>
+  		<?php } ?>
   	</div>
   </div>
   <!-- Qualities -->
@@ -47,18 +34,15 @@ include('./_nav.php');  ?>
   		<!-- section welcome -->
   		<div class="welcome">
   			<div class="welcome-content">
-  				<h2>WELCOME TO MMCITE 9</h2>
-  				<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiipr aesentium voluptatum deleniti atque corru.</p>
-  				<p>Quos dolores et quas molestias excepturi sint occaecati cupiditate non pro vident, similique sunt in culpa cui officia deserunt mollitia animi, id estlabo rum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinc tio m libero tempore, cum soluta nobis.</p>
-  				<a href="#"><button>READ MORE</button></a>
+  				<h2><?=$page->title1?></h2>
+  				<?=$page->textarea1?>
+  				<a href="<?=$page->buttonLink?>"><button><?=$page->buttonTitle?></button></a>
   			</div>
-  			<div class="welcome-video">
-  				<video>
-  					<source src="<?= $config->urls->templates ?>assets/video/comercial-deportes.ogv" type="video/ogv">
-  						<source src="<?= $config->urls->templates ?>assets/video/comercial-deportes.webm" type="video/webm">
-  							<source src="<?= $config->urls->templates ?>assets/video/comercial-deportes.mp4" type="video/mp4">
-  							</video>
-  						</div>
+          			<div class="welcome-video">
+          				<video>
+          				    <source src="<?=$page->video->url?>" type="video/mp4">
+          				</video>
+          			</div>
   					</div>
   					<!-- section products -->
   					<div class="products">
@@ -71,7 +55,7 @@ include('./_nav.php');  ?>
                   foreach ($products as $key => $product) { 
                     $image=$product->images->first();
                     if($image)
-                      $img=$image->width(240, array('quality' => 80, 'upscaling' => true, 'cropping' => false)); ?>
+                      $img=$image->width(620, array('quality' => 95, 'upscaling' => true, 'cropping' => false)); ?>
   							<div class="products-item">
   								<img src="<?php if($image) echo $img->url; ?>" alt="<?=$product->title?>">
   								<h3><?=$product->title?></h3>

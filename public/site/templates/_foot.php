@@ -3,8 +3,7 @@
 				<div class="footer-content-top">
 					<div class="footer-first-content">
 						<div class="footer-logos">
-							<img src="https://dummyimage.com/80x80/000/fff" alt="">
-							<img src="https://dummyimage.com/80x80/000/fff" alt="">
+							<img src="<?= $config->urls->templates ?>assets/images/mmcite9_logo.svg" alt="">
 						</div>
 						<p>Public realms are fascinating places where people meet each other and also experience the history of the city.</p>
 					</div>
@@ -41,11 +40,11 @@
     <hr class="footer-hr-horizontal">
     <div class="j-wrap">
       <div class="footer-content-bottom">
-        <p>Copyright © 2018, Mmcite 9. - All Rights Reserved</p>
+        <p>Copyright © 2018, mmcite 9. - All Rights Reserved</p>
         <div class="social-networks">
-          <img src="https://dummyimage.com/48x48/000/fff" alt="">
-          <img src="https://dummyimage.com/48x48/000/fff" alt="">
-          <img src="https://dummyimage.com/48x48/000/fff" alt="">
+            <a href="#"><img src="<?= $config->urls->templates ?>assets/images/001-twitter-logo-button.svg" alt="" height="48px"></a>
+            <a href="#"><img src="<?= $config->urls->templates ?>assets/images/002-facebook-logo-button.svg" alt="" height="48px"></a>
+            <a href="#"><img src="<?= $config->urls->templates ?>assets/images/003-instagram-logo.svg" alt="" height="48px"></a>
         </div>
       </div>
     </div>
@@ -57,7 +56,7 @@
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script type="text/javascript" src="<?= $config->urls->templates ?>assets/slick/slick.min.js"></script>
-  <script src="<?= $config->urls->templates ?>assets/scripts/compartir.js"></script> 
+  <script src="<?= $config->urls->templates ?>assets/scripts/compartir.js"></script>
   <script id="dsq-count-scr" src="//mmcite9-1.disqus.com/count.js" async></script>
   <script type="text/javascript">
      var normalize = (function() {
@@ -91,7 +90,7 @@
          $('.your-class').slick({
             dots: true,
             infinite: true,
-            speed: 500,
+            speed: 3500,
             fade: true,
             cssEase: 'ease',
             slidesToShow: 1,
@@ -175,16 +174,23 @@
 
         if(!pattern.test(email.val())){
           $(email).addClass('error');
-          $(email).after('<label class="error"> El correo electrónico señalado es incorrecto</label>');   
-        } 
+          $(email).after('<label class="error"> El correo electrónico señalado es incorrecto</label>');
+        }
         if($('label.error').length == 0){
           console.log("se enviara un correo");
 
         }
-      
+
 
           return false;
       });
+      $("video").click(function() {
+          if (this.paused) {
+            this.play();
+          } else {
+            this.pause();
+          }
+        });
  </script>
 </body>
 </html>

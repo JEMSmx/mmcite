@@ -13,12 +13,12 @@ body {
   text-rendering: optimizeLegibility;
   letter-spacing: 1px;
   line-height: 1.5;
-  margin-top: 176px;
+  margin-top: 187px;
   @include tablet{
-    margin-top: 136px;
+    margin-top: 142px;
   }
   @include mobile{
-    margin-top: 62px;
+    margin-top: 72px;
   }
 // General Resets
 *{

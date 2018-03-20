@@ -31,7 +31,10 @@ header.main-nav {
     justify-content: center;
     width: 100%;
     height: auto;
-    background: cyan;
+    background: #e2e2e2;
+    @include mobile{
+      display: none;
+    }
 
     .header-info-content{
       max-width: 1232px;
@@ -125,6 +128,9 @@ header.main-nav {
         justify-content: flex-start;
         padding-left: 24px;
       }
+      @include mobile{
+        padding-left: 16px;
+      }
 
       .header-search-images{
         display: flex;
@@ -134,6 +140,14 @@ header.main-nav {
           height: 72px;
           margin-right: 16px;
           margin-bottom: 0;
+          @include mobile{
+            height: 40px;
+          }
+        }
+        a{
+          @include mobile{
+            height: 40px;
+          }
         }
       }
       .header-search-item{
@@ -143,6 +157,9 @@ header.main-nav {
         @include tablet{
           width: 45%;
           margin-left: 48px;
+        }
+        @include mobile{
+          display: none;
         }
         form{
           width: 100%;
@@ -314,6 +331,9 @@ header.main-nav.responsive {
   display: none;
   @media screen and (max-width: 992px){
     display: block;
+  }
+  @include mobile{
+    top: 22px;
   }
 }
 #nav-icon span {

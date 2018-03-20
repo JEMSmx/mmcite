@@ -1,20 +1,20 @@
   <div class="header-container">
-    <header class="main-nav">
+    <header class="main-nav"><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
       <div class="header-info">
-        <div class="header-info-content">
+        <div class="header-info-content" style="padding: 0 16px;">
           <div class="company-info">
             <div class="company-info-box">
-              <img src="https://dummyimage.com/16x16/000/fff" alt="">
+              <img src="<?= $config->urls->templates ?>assets/images/phone-call.svg" alt="" height="16px">
               <a href="tel:+420572434290">+420 572 434 290</a>
             </div>
             <p>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;</p>
             <div class="company-info-box">
-              <img src="https://dummyimage.com/16x16/000/fff" alt="">
-              <a href="mailto:sales@MMCITE.cz">SALES@MMCITE.CZ</a>
+              <img src="<?= $config->urls->templates ?>assets/images/envelope.svg" alt="" height="16px">
+              <a href="mailto:sales@MMCITE.cz">ventas@mmcite.mx</a>
             </div>
           </div>
           <div class="company-register">
-            <div class="company-info-box">
+            <!--<div class="company-info-box">
               <img src="https://dummyimage.com/16x16/000/fff" alt="">
               <a href="#">SIGN IN</a>
             </div>
@@ -27,24 +27,26 @@
             <div class="company-info-box">
               <a href="#">EN-USA</a>
             </div>
-            <p>&nbsp;&nbsp;|&nbsp;&nbsp;</p>
+            -->
             <div class="company-info-box">
-              <img src="https://dummyimage.com/16x16/000/fff" alt="">
-              <a href="#">BASKET [0]</a>
+              <!--<img src="https://dummyimage.com/16x16/000/fff" alt="">-->
+              <a href="#">Cotización [0]</a>
             </div>
           </div>
         </div>
       </div>
       <div class="header-search-container">
-        <div class="header-search-inner">
+        <div class="header-search-inner" style="padding: 16px;">
           <div class="header-search-images">
-            <a href="/"><img src="https://dummyimage.com/72x72/000/fff" alt=""></a>
-            <img src="https://dummyimage.com/72x72/000/fff" alt="">
+            <a href="/">
+                <img src="<?= $config->urls->templates ?>assets/images/mmcite9_logo.svg" alt="">
+            </a>
           </div>
           <div class="header-search-item">
             <form id="search">
               <input type="text" id="inputSearch" name="word" placeholder="SEARCH">
-              <button type="submit" class="img-button"></button>
+              <button type="submit" class="img-button" style="background-image: url(<?= $config->urls->templates ?>assets/images/search.svg);
+    "></button>
             </form>
           </div>
         </div>
@@ -69,21 +71,6 @@
           <a href="">
             <li>
               REFERENCES
-            </li>
-          </a>
-          <a href="">
-            <li>
-              MMCITE+
-            </li>
-          </a>
-          <a href="">
-            <li>
-              EGOE
-            </li>
-          </a>
-          <a href="">
-            <li>
-              RESYSTA
             </li>
           </a>
           <a href="">

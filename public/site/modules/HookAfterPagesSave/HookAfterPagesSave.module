@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * Hook the saving of pages to add own processes.
+ * 
+ * ProcessWire 2.x 
+ * Copyright (C) 2014 by Ryan Cramer 
+ * Licensed under GNU/GPL v2, see LICENSE.TXT
+ * 
+ * http://processwire.com
+ *
+ */
+
+
+class HookAfterPagesSave extends WireData implements Module {
+     public static function getModuleInfo() {
+       return array(
+         'title' => 'HookAfterPagesSave',
+         'summary' => 'HookAfterPagesSave',
+         'version' => 1 ,
+         'autoload' => true,
+       );
+     }
+
+     public function init() {
+       $this->pages->addHookAfter('added', $this, 'hookAdded'); 
+     }
+     
+
+
+  public function hookAdded(HookEvent $event) {
+       // this function only called after a new page added
+        $page = $event->object; 
+       // now you can access anything from the $page
+     $page = $event->arguments[0]; 
+            // Sample condition and changes
+     if(empty($page->id)) return;
+
+
+    if($page->template == "category"){
+        $newCategory=$page->data['title'];
+        $p = new Page();
+        $p->setOutputFormatting(false);
+        $p->template = 'category-product'; 
+        $p->parent = wire('pages')->get('/productos');
+        $p->categoryReference = $page->id;
+        $p->title = $newCategory;
+        $p->save();
+      }
+    }
+ 
+}
