@@ -66,16 +66,16 @@
             padding-bottom: 6px;
         }
         .blue label {
-           background: gray;
+           background: $gray-tabs;
         }
         .tab-content {
            max-height: 0;
            overflow: hidden;
            padding-left: 40px;
            padding-right: 16px;
-           border-right: 1px solid gray;
-           border-bottom: 1px solid gray;
-           border-left: 1px solid gray;
+           border-right: 1px solid $gray-tabs;
+           border-bottom: 1px solid $gray-tabs;
+           border-left: 1px solid $gray-tabs;
            background: #fff;
            -webkit-transition: max-height .35s;
            -o-transition: max-height .35s;
@@ -85,7 +85,7 @@
                font-size: 18px;
                margin-top: 40px;
                a{
-                   color: orange;
+                   color: $red;
                }
            }
            .h4-second{
@@ -125,7 +125,7 @@
            max-height: 100em;
         }
         input:checked ~ label {
-            background: #2980b9;
+            background: $blue-header;
          }
         /* Icon */
         label::after {
@@ -208,7 +208,7 @@
                 padding-bottom: 12px;
                 padding-left: 32px;
                 margin-top: 24px;
-                background: red;
+                background: $red;
                 border-radius: 25px;
                 @include mobile{
                     align-self: center;

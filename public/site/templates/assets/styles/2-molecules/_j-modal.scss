@@ -29,7 +29,7 @@
    height: 32px;
 }
 .closeModal:hover{
-   color: red;
+   color: $red;
 }
 .modal{
    position: relative;
@@ -45,9 +45,13 @@
    @include mobile{
       width: 92%;
       padding: 16px 16px;
+      overflow: scroll;
    }
 
    table{
+      @include mobile{
+         width: 300%;
+      }
       tbody{
          tr{
             border-radius: 0px;
@@ -80,7 +84,7 @@
    }
 
       button{
-         background: red;
+         background: $red;
          letter-spacing: 3px;
          font-size: 18px;
       }

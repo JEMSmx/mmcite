@@ -23,7 +23,7 @@
   margin-bottom: 0;
 	margin-right: 4px;
 	cursor: pointer;
-  background: gray;
+  background: $gray-ind-product;
   font-weight: normal;
   transition: background ease 0.2s;
   border-radius: 10px 10px 0 0;
@@ -47,7 +47,7 @@
   padding-bottom: 32px;
   padding-left: 40px;
   background: #fff;
-  border: 1px solid gray;
+  border: 1px solid $gray-ind-product;
   @include mobile{
     padding-top: 24px;
     padding-right: 16px;
@@ -60,7 +60,7 @@
 	display: none;
 }
 .tabs input[type="radio"]:checked + label {
-	background: #398acc;
+	background: $blue-header;
 }
 .tabs input[type="radio"]:checked + label + .tab {
 	display: block;

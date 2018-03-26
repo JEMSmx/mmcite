@@ -31,7 +31,7 @@ header.main-nav {
     justify-content: center;
     width: 100%;
     height: auto;
-    background: #e2e2e2;
+    background: $blue-header;
     @include mobile{
       display: none;
     }
@@ -55,6 +55,7 @@ header.main-nav {
           display: none;
         }
         p{
+          color: #fff;
           margin-bottom: 0;
         }
 
@@ -69,6 +70,7 @@ header.main-nav {
             margin-right: 8px;
           }
           a{
+            color: #fff;
             font-size: 14px;
             letter-spacing: 1px;
           }
@@ -85,6 +87,7 @@ header.main-nav {
         }
 
         p{
+          color: #fff;
           margin-bottom: 0;
         }
 
@@ -99,6 +102,7 @@ header.main-nav {
             margin-right: 8px;
           }
           a{
+            color: #fff;
             font-size: 14px;
           }
         }
@@ -205,7 +209,7 @@ header.main-nav {
       padding-left: 16px;
       a:hover{
         li{
-          color: orange;
+          color: $red;
           transition: all .25s ease-in-out;
         }
       }

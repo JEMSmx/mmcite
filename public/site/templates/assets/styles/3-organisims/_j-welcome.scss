@@ -38,7 +38,7 @@
          button{
             max-width: 100%;
             width: auto;
-            color: red;
+            color: $red;
             font-weight: bolder;
             letter-spacing: 1px;
             padding-top: 16px;
@@ -46,13 +46,13 @@
             padding-bottom: 14px;
             padding-left: 40px;
             background: #fff;
-            border: 1px solid red;
+            border: 1px solid $red;
             border-radius: 25px;
             transition: all .25s ease-in-out;
          }
          button:hover{
             color: #fff;
-            background: red;
+            background: $red;
             transition: all .25s ease-in-out;
          }
       }

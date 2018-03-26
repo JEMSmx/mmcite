@@ -92,7 +92,7 @@
          }
 
          .product-price{
-            color: red;
+            color: $red;
             font-size: 22px;
             font-weight: bold;
             line-height: 1;
@@ -235,8 +235,8 @@
          padding-right: 24px;
          padding-bottom: 18px;
          padding-left: 24px;
-         background: red;
-         border: 1px solid red;
+         background: $red;
+         border: 1px solid $red;
          border-radius: 40px;
          transition: all .25s ease-in-out;
          @include mobile{
@@ -260,6 +260,30 @@
 
       }
    }
+   .slider-nav{
+      width: 85%;
+      align-self: center;
+      @include mobile{
+         width: 95%;
+      }
+   }
+   .img-nav{
+      align-self: center;
+      max-height: 94px;
+   }
+   .img-for{
+      align-self: center;
+   
+      height: auto!important;
+      max-height: 480px;
+   
+   
+   }
+   .slick-track{
+      display: flex !important;
+      justify-content: center;
+   }
+   
 }
 
 //avaliability
@@ -277,13 +301,6 @@
 }
 .slider-nav-product:focus-within{
    opacity: 1;
-   border: 2px solid red;
+   border: 2px solid $red;
 }
 
-.slider-nav{
-   width: 85%;
-   align-self: center;
-   @include mobile{
-      width: 95%;
-   }
-}
