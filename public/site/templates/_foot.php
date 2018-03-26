@@ -58,6 +58,25 @@
   <script type="text/javascript" src="<?= $config->urls->templates ?>assets/slick/slick.min.js"></script>
   <script src="<?= $config->urls->templates ?>assets/scripts/compartir.js"></script>
   <script id="dsq-count-scr" src="//mmcite9-1.disqus.com/count.js" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.17.0/dist/sweetalert2.all.min.js"></script>
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '161942504509860',
+      xfbml      : true,
+      version    : 'v2.12'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
   <script type="text/javascript">
      var normalize = (function() {
     var from = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç",

@@ -1,11 +1,11 @@
 <?php
 
-include('./_head.php'); 
+include('./_head.php');
 
 include('./_nav.php');  ?>
 
   <!--  Hero -->
-  <div class="hero-content-products">
+  <!-- <div class="hero-content-products">
     <div class="contacto-slick">
       <div class="hero-contact-item-1">
         <h2 class="item-title">CONTACT</h2>
@@ -20,7 +20,7 @@ include('./_nav.php');  ?>
         <h2 class="item-title">CONTACT</h2>
       </div>
     </div>
-  </div>
+  </div> -->
   <!--  Main content -->
   <main class="j-workspace ">
     <div class="j-wrap">
@@ -200,5 +200,5 @@ include('./_nav.php');  ?>
     <!-- section banner -->
     <?php include('./_subs.php'); ?>
   </main>
-  
+
 <?php include('./_foot.php'); ?>

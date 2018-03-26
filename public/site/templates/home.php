@@ -1,6 +1,4 @@
-<?php
-
-include('./_head.php'); 
+<?php include('./_head.php');
 
 include('./_nav.php');  ?>
 
@@ -18,7 +16,7 @@ include('./_nav.php');  ?>
   </div>
   <!-- Qualities -->
   <div class="qualities">
-  <?php foreach ($page->qualities as $key => $quality) { ?> 
+  <?php foreach ($page->qualities as $key => $quality) { ?>
   	<div class="qualities-item<?php if($key==1) echo '-2'; ?>">
   		<img src="<?=$quality->img->url?>" alt="<?=$quality->title?>">
   		<div class="qualities-item-text-content">
@@ -47,24 +45,24 @@ include('./_nav.php');  ?>
   					<!-- section products -->
   					<div class="products">
   						<div class="product-title">
-  							<h2>FEATURED PRODUCTS</h2>
+  							<h2>Productos destacados</h2>
   						</div>
   						<div class="products-items-content">
                 <?php
                   $products=$pages->find("template=product, sort=-published, limit=4");
-                  foreach ($products as $key => $product) { 
+                  foreach ($products as $key => $product) {
                     $image=$product->images->first();
                     if($image)
                       $img=$image->width(620, array('quality' => 95, 'upscaling' => true, 'cropping' => false)); ?>
   							<div class="products-item">
   								<img src="<?php if($image) echo $img->url; ?>" alt="<?=$product->title?>">
   								<h3><?=$product->title?></h3>
-  								<a href="<?=$product->url?>"><button>VIEW DETAILS</button></a>
+  								<a href="<?=$product->url?>"><button>Más información</button></a>
   							</div>
                 <?php } ?>
   						</div>
               <?php if($products->count>4){ ?>
-                <a href="/products" class="products-button-bottom"><button>VIEW MORE PRODUCTS</button></a>
+                <a href="/products" class="products-button-bottom"><button>Ver mas productos</button></a>
               <?php } ?>
   					</div>
   				</div>

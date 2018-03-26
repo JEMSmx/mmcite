@@ -5,7 +5,7 @@
           <div class="company-info">
             <div class="company-info-box">
               <img src="<?= $config->urls->templates ?>assets/images/phone-call.svg" alt="" height="16px">
-              <a href="tel:+420572434290">+420 572 434 290</a>
+              <a href="tel:+523338268184">+52 33 3826 8184</a>
             </div>
             <p>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;</p>
             <div class="company-info-box">
@@ -30,7 +30,7 @@
             -->
             <div class="company-info-box">
               <!--<img src="https://dummyimage.com/16x16/000/fff" alt="">-->
-              <a href="#">Cotización [0]</a>
+              <a href="/cotizar">Cotización [<?=$cart->getTotalItem()?>]</a>
             </div>
           </div>
         </div>
@@ -44,9 +44,8 @@
           </div>
           <div class="header-search-item">
             <form id="search">
-              <input type="text" id="inputSearch" name="word" placeholder="SEARCH">
-              <button type="submit" class="img-button" style="background-image: url(<?= $config->urls->templates ?>assets/images/search.svg);
-    "></button>
+              <input type="text" id="inputSearch" name="word" placeholder="Buscar">
+              <button type="submit" class="img-button" style="background-image: url(<?= $config->urls->templates ?>assets/images/search.svg);"></button>
             </form>
           </div>
         </div>
@@ -55,32 +54,32 @@
         <ul>
           <a href="">
             <li>
-              ABOUT MMCITE
+              Acerca de
             </li>
           </a>
           <a href="/products">
             <li>
-              PRODUCTS
+              Productos
             </li>
           </a>
           <a href="">
             <li>
-              NEWS
+              Noticias
             </li>
           </a>
           <a href="">
             <li>
-              REFERENCES
+              Referencias
             </li>
           </a>
           <a href="">
             <li>
-              MMCITE SOCIAL
+              mmcite Social
             </li>
           </a>
           <a href="/contact">
             <li>
-              CONTACT
+              Contacto
             </li>
           </a>
         </ul>

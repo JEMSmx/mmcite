@@ -11,7 +11,7 @@ include('./_head.php'); // include header markup ?>
 		echo $page->body; 
 	
 		// render navigation to child pages
-		renderNav($page->children); 
+		//renderNav($page->children); 
 		
 		// TIP: Notice that this <div id='content'> section is
 		// identical between home.php and basic-page.php. You may
@@ -34,7 +34,7 @@ include('./_head.php'); // include header markup ?>
 		if($section->hasChildren > 1) {
 			// output sidebar navigation
 			// see _init.php for the renderNavTree function
-			renderNavTree($section);
+			//renderNavTree($section);
 		}
 	
 		// output sidebar text if the page has it
